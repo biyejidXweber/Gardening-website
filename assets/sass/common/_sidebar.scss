@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------
+  10. Sidebar
+----------------------------------------------------------------*/
+.cs_sidebar_item {
+  &:not(:last-child) {
+    margin-bottom: 45px;
+  }
+}
+
+.cs_sidebar_widget_title {
+  font-size: 20px;
+  line-height: 1.33em;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--heading-color);
+  padding-bottom: 10px;
+}
+.tagcloud {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+.tag-cloud-link {
+  font-size: 14px;
+  line-height: 1.6em;
+  border: 1px solid rgb(55 72 54 / 20%);
+  padding: 5px 15px;
+  display: inline-block;
+  margin: 5px;
+  border-radius: 6px;
+  color: var(--heading-color);
+  &:hover {
+    color: #fff;
+    background-color: var(--heading-color);
+    border-color: var(--heading-color);
+  }
+}
+.widget_archive,
+.widget_categories {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      padding-left: 30px;
+      position: relative;
+      i {
+        position: absolute;
+        left: 0;
+        top: 5px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+.cs_recent_posts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}
+.cs_recent_post {
+  display: flex;
+  align-items: center;
+}
+.cs_recent_post_thumb {
+  height: 70px;
+  width: 70px;
+  border-radius: 7px;
+  flex: none;
+  overflow: hidden;
+  margin-right: 15px;
+  &:hover {
+    .cs_recent_post_thumb_in {
+      transform: scale(1.06);
+    }
+  }
+}
+.cs_recent_post_thumb_in {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transition: all 0.4s ease;
+}
+.cs_recent_post_title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.cs_sidebar_search {
+  position: relative;
+}
+.cs_sidebar_search input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid var(--heading-color);
+  padding: 9px 40px 9px 15px;
+  transition: all 0.3sease;
+  border-radius: 10px;
+  &:focus {
+    border-color: var(--heading-color);
+  }
+}
+.cs_sidebar_search_btn {
+  position: absolute;
+  border: none;
+  outline: none;
+  bottom: 0px;
+  right: 0;
+  padding: 10px 14px;
+  cursor: pointer;
+  background-color: var(--heading-color);
+  border-radius: 0 10px 10px 0;
+  transition: all 0.3s ease;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    opacity: 0.9;
+  }
+}
+.cs_author_card {
+  img {
+    height: 130px;
+    width: 130px;
+    margin-bottom: 22px;
+  }
+  h3 {
+    font-size: 30px;
+    margin-bottom: 14px;
+  }
+  p {
+    margin-bottom: 0;
+  }
+}
+.cs_right_sidebar {
+  padding-left: 40px;
+  @media (max-width: 991px) {
+    padding-left: 0px;
+    padding-top: 60px;
+  }
+}

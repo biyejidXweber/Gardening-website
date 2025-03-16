@@ -1,0 +1,43 @@
+/*--------------------------------------------------------------
+  14. Team
+----------------------------------------------------------------*/
+.cs_team_member.cs_style_1 {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(transparent, var(--heading-color));
+  }
+  .cs_team_member_desc {
+    margin-top: 0px;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  .cs_team_member_img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  .cs_team_member_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding: 16px;
+    width: 100%;
+  }
+  &:hover {
+    .cs_team_member_desc {
+      margin-top: 16px;
+      max-height: 72px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+  }
+}

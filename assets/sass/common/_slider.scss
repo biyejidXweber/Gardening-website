@@ -1,0 +1,341 @@
+/*--------------------------------------------------------------
+  5. Slider
+----------------------------------------------------------------*/
+.cs_slider {
+  position: relative;
+}
+.slick-arrow {
+  cursor: pointer;
+}
+.draggable {
+  cursor: url(../img/drag.png) 16 9, ew-resize !important;
+}
+.slick-slide > div {
+  display: flex;
+  flex-direction: column;
+}
+.cs_remove_overflow {
+  .slick-list {
+    overflow: visible;
+  }
+
+  .slick-slide {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s linear;
+
+    &.slick-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.cs_slider_gap_24 {
+  .slick-slide {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .slick-list {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+.cs_slider_arrows.cs_style_1 {
+  .cs_arrow_wrap_left,
+  .cs_arrow_wrap_right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .cs_left_arrow,
+  .cs_right_arrow {
+    height: 60px;
+    width: 60px;
+    flex: none;
+    background-color: var(--heading-color);
+    transition: all 0.4s ease;
+    color: var(--white-color);
+    @media (max-width: 991px) {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:hover {
+      background-color: var(--heading-color);
+    }
+  }
+  .cs_arrow_wrap_left {
+    left: 0;
+  }
+  .cs_arrow_wrap_right {
+    right: 0;
+  }
+}
+.cs_slider_arrows.cs_style_2 {
+  display: flex;
+  justify-content: space-between;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  .slick-arrow {
+    margin-top: -40px;
+    position: relative;
+    z-index: 3;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  &.cs_type_1 {
+    max-width: 45px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}
+.cs_slider_arrows.cs_style_3 {
+  .cs_right_arrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    height: 480px;
+    width: calc(100% - 1087px);
+    transition: all 0.3s ease;
+    @media (max-width: 1400px) {
+      width: calc(100% - 900px);
+      padding-right: 48px;
+    }
+    @media (max-width: 1199px) {
+      width: calc(100% - 874px);
+      height: 400px;
+      padding-right: 0;
+    }
+    span {
+      color: var(--heading-color);
+      width: 126px;
+      height: 126px;
+      border: 1px solid var(--heading-color);
+      border-radius: 50%;
+      @media (max-width: 1199px) {
+        width: 90px;
+        height: 90px;
+      }
+    }
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+.cs_slider_arrows.cs_style_4 {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  justify-content: space-between;
+  @media (max-width: 991px) {
+    width: 120px;
+  }
+  .slick-arrow {
+    transition: all 0.3s ease;
+    svg {
+      width: 9px;
+      height: 17px;
+    }
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+.cs_slider_arrows_4_transparent_wrap {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgb(255 255 255 / 10%);
+  padding: 13px 0;
+  backdrop-filter: blur(5px);
+  border-radius: 0 0 20px 20px;
+  .cs_slider_number.cs_style_2 {
+    color: #fff;
+  }
+}
+.cs_pagination_1_wrap {
+  position: absolute;
+  bottom: 64px;
+  left: 0;
+  width: 100%;
+}
+.cs_pagination_1_in {
+  max-width: 350px;
+  width: 100%;
+}
+.cs_pagination.cs_style_1 {
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    flex: 1;
+    height: 4px;
+    button {
+      height: 100%;
+      width: 100%;
+      font-size: 0;
+      color: transparent;
+      padding: 0;
+      background-color: rgb(249 251 243 / 50%);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: rgb(249 251 243 / 75%);
+      }
+    }
+
+    &.slick-active {
+      button {
+        background-color: var(--white-color);
+      }
+    }
+  }
+}
+.cs_pagination.cs_style_2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+  }
+
+  li {
+    display: flex;
+    flex: 1;
+    height: 6px;
+    width: 30px;
+    margin: 3px;
+    border-radius: 10px;
+    overflow: hidden;
+    button {
+      height: 100%;
+      width: 100%;
+      font-size: 0;
+      color: transparent;
+      padding: 0;
+      background-color: var(--heading-color);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all 0.3s ease;
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &.slick-active {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+}
+.cs_slider_number.cs_style_1 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @media (max-width: 991px) {
+    margin-bottom: 10px;
+  }
+  > span[data-number]:before {
+    content: '0' attr(data-number);
+  }
+  > span {
+    &:before {
+      content: attr(data-number);
+      display: none;
+    }
+    > span {
+      display: block;
+    }
+  }
+
+  [data-number='1'],
+  [data-number='2'],
+  [data-number='3'],
+  [data-number='4'],
+  [data-number='5'],
+  [data-number='6'],
+  [data-number='7'],
+  [data-number='8'],
+  [data-number='9'] {
+    &::before {
+      display: block;
+    }
+    > span {
+      display: none;
+    }
+  }
+}
+.cs_slider_number.cs_style_2 {
+  display: inline-flex;
+  gap: 5px;
+  color: var(--heading-color);
+  .cs_slider_number_seperator {
+    &::before {
+      content: '/';
+    }
+  }
+}
+.cs_full_width_slider_section {
+  width: calc(100% + (100vw - 1296px) / 2);
+  @media (max-width: 1400px) {
+    width: calc(100% + (100vw - 1116px) / 2);
+  }
+  @media (max-width: 1400px) {
+    width: calc(100% + (100vw - 936px) / 2);
+  }
+}
+.slick-slide {
+  .cs_card.cs_style_4 .cs_card_info {
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+  &.slick-active {
+    .cs_card.cs_style_4 .cs_card_info {
+      opacity: 1;
+      transition-delay: 0.4s;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .cs_hide_lg {
+    display: none;
+  }
+}
+
+.cs_show_lg {
+  display: none !important;
+}
+@media (max-width: 991px) {
+  .cs_hide_lg {
+    display: none !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .cs_show_lg {
+    display: flex !important;
+  }
+}

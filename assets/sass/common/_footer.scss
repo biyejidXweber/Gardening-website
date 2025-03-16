@@ -1,0 +1,190 @@
+/*--------------------------------------------------------------
+  8. Footer
+----------------------------------------------------------------*/
+.cs_footer_widget_menu a,
+.cs_footer_links a {
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+  transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+    color 0.27s ease-out;
+  background-position: 100% calc(100% - 0px);
+  background-size: 0 1px;
+  &:hover {
+    background-size: 100% 1px;
+    background-position: 0 calc(100% - 0px);
+  }
+}
+.cs_copyright {
+  color: var(--heading-color);
+  opacity: 0.75;
+}
+.cs_bottom_footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 16px 0 56px;
+  border-top: 1px solid var(--heading-color);
+  @media (max-width: 991px) {
+    padding: 15px 0;
+    justify-content: center;
+  }
+  > * {
+    padding: 4px 0;
+  }
+}
+.cs_footer_links {
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    &:not(:last-child) {
+      &::after {
+        content: '|';
+        margin: 0 10px;
+        position: relative;
+        top: -1px;
+      }
+    }
+  }
+  a {
+    color: var(--heading-color);
+    opacity: 0.75;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.cs_text_widget {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  @media (max-width: 575px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  p {
+    margin: 0;
+    padding-left: 32px;
+    border-left: 2px solid var(--heading-color);
+    @media (max-width: 575px) {
+      padding-left: 15px;
+    }
+  }
+}
+.cs_footer_widget + .cs_footer_widget {
+  margin-top: 32px;
+}
+.cs_newsletter.cs_style_1 {
+  position: relative;
+  .cs_newsletter_input {
+    height: 96px;
+    padding: 10px 80px 10px 24px;
+    background-color: #e1ece3;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    opacity: 1;
+    @media (max-width: 1199px) {
+      height: 70px;
+      padding: 10px 70px 10px 20px;
+    }
+    &::placeholder {
+      color: var(--heading-color);
+      opacity: 0.75;
+    }
+
+    &::-ms-input-placeholder {
+      color: var(--heading-color);
+      opacity: 0.75;
+    }
+  }
+  .cs_newsletter_btn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    @media (max-width: 1199px) {
+      right: 11px;
+      top: 11px;
+    }
+  }
+}
+.cs_footer_widget_menu {
+  color: var(--heading-color);
+  li {
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+.cs_footer_widget_title {
+  font-size: 16px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.cs_footer_row {
+  display: flex;
+  gap: 30px 72px;
+  padding: 100px 0 80px;
+  @media (max-width: 1199px) {
+    gap: 30px 45px;
+  }
+  @media (max-width: 991px) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 35px 24px;
+    padding: 70px 0 50px;
+  }
+  @media (max-width: 380px) {
+    flex-direction: column;
+  }
+  .cs_footer_col {
+    flex: none;
+    max-width: 150px;
+
+    &:first-child {
+      flex: 1;
+      max-width: initial;
+      padding-right: 12px;
+      @media (max-width: 991px) {
+        width: 100%;
+        flex: none;
+      }
+    }
+  }
+}
+.cs_footer.cs_style_1.cs_color_1 {
+  background-color: var(--heading-color);
+  color: var(--white-color);
+  .cs_footer_widget_menu,
+  .cs_footer_widget_title,
+  .cs_copyright,
+  .cs_footer_links a,
+  .cs_footer_widget_menu a {
+    color: var(--white-color);
+  }
+  .cs_bottom_footer {
+    border-color: var(--white-color);
+  }
+  .cs_text_widget p {
+    border-color: var(--white-color);
+  }
+  .cs_newsletter_input {
+    background-color: var(--white-color);
+  }
+  .cs_newsletter_btn {
+    background-color: #e1ece3;
+    &:hover {
+      background-color: var(--heading-color);
+    }
+  }
+}
+.cs_footer.cs_style_1.cs_color_2 {
+  background-color: #e1ece3;
+  .cs_newsletter_input {
+    background-color: var(--white-color);
+  }
+  .cs_newsletter_btn {
+    background-color: var(--heading-color);
+    color: var(--white-color);
+  }
+}

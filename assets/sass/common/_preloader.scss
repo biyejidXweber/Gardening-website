@@ -1,0 +1,91 @@
+/*--------------------------------------------------------------
+  2. Preloader
+----------------------------------------------------------------*/
+.cs_preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--gray-color);
+  z-index: 99999;
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--heading-color);
+    opacity: 0.08;
+  }
+  .cs_preloader_shape {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_preloader_shape_2 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+}
+
+.cs_preloader_in {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 65px;
+  height: 65px;
+  font-size: 0;
+  display: inline-block;
+  margin: -32px 0 0 -32px;
+  text-indent: -9999em;
+  transform: translateZ(0);
+}
+
+.cs_preloader_in span {
+  background-color: var(--heading-color);
+  display: inline-block;
+  float: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65px;
+  height: 65px;
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: ballPulseDouble 2s ease-in-out infinite;
+}
+
+.cs_preloader_in span:last-child {
+  animation-delay: -1s;
+}
+
+@keyframes ballPulseDouble {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+.cs_preloader_text {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: var(--heading-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

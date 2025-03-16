@@ -1,0 +1,129 @@
+/*--------------------------------------------------------------
+  10. Hero
+----------------------------------------------------------------*/
+.cs_circle_group {
+  display: flex;
+  padding-left: 10px;
+  span {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--white-color);
+    margin-left: -10px;
+    &:first-child {
+      transition: all 0.65s ease;
+    }
+    &:last-child {
+      transition: all 0.45s ease;
+    }
+  }
+}
+.cs_hero.cs_style_1 {
+  position: relative;
+  .cs_hero_in {
+    min-height: 780px;
+    padding: 150px 0;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .cs_hero_title {
+    b {
+      font-weight: 600;
+    }
+  }
+  .cs_hero_subtitle {
+    max-width: 770px;
+    @media (max-width: 1400px) {
+      max-width: 690px;
+    }
+    @media (max-width: 1400px) {
+      max-width: 620px;
+    }
+  }
+  .cs_hero_text {
+    max-width: 1020px;
+    position: relative;
+    z-index: 2;
+    @media (max-width: 1400px) {
+      max-width: 750px;
+    }
+  }
+  .cs_hero_btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    align-items: center;
+  }
+  .cs_hero_funfact_wrap {
+    border-radius: 20px;
+    position: absolute;
+    top: 166px;
+    right: 0;
+    overflow: hidden;
+    padding: 1px;
+    @media (max-width: 991px) {
+      display: none;
+    }
+    &:hover {
+      .cs_circle_group {
+        span {
+          &:first-child {
+            transform: translateX(60px);
+          }
+          &:last-child {
+            transform: translateX(-60px);
+          }
+        }
+      }
+    }
+  }
+  .cs_hero_funfact {
+    border-radius: inherit;
+    padding: 24px 16px;
+    box-shadow: -2px 0px 7px 0px rgb(255 255 255 / 50%);
+  }
+  .cs_hero_box {
+    padding: 24px;
+    position: absolute;
+    bottom: 64px;
+    right: 0;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(
+      241deg,
+      rgba(255, 255, 255, 0.5) -7.37%,
+      rgba(255, 255, 255, 0.1) 89.52%
+    );
+    backdrop-filter: blur(5px);
+    width: 410px;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_hero_box_btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+  .cs_hero_bg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    .cs_slider,
+    .cs_slider_container,
+    .cs_slider_wrapper,
+    .slick-list,
+    .slick-track,
+    .slick-track * {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+  12. CTA
+----------------------------------------------------------------*/
+.cs_cta.cs_style_1 {
+  &.cs_type_1 {
+    .cs_cta_in {
+      max-width: 710px;
+      margin-left: auto;
+    }
+  }
+}
+.cs_cta.cs_style_2 {
+  height: 300px;
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  &.cs_type_1 {
+    min-height: 400px;
+    height: 100%;
+    align-items: flex-start;
+  }
+}

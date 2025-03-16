@@ -1,0 +1,25 @@
+/*--------------------------------------------------------------
+  13. Testimonial
+----------------------------------------------------------------*/
+.cs_testimonial.cs_style_1 {
+  .cs_testimonial_blockquote {
+    font-style: initial;
+    span {
+      color: #7f8f80;
+    }
+  }
+  .cs_testimonial_avatar_designation {
+    color: #7f8f80;
+  }
+  .cs_testimonial_meta_wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}

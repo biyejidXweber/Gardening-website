@@ -1,0 +1,514 @@
+/*--------------------------------------------------------------
+  15. Card
+----------------------------------------------------------------*/
+.cs_card_tags {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 320px;
+  width: calc(100% - 65px);
+  gap: 8px 0px;
+  padding-left: 16px;
+  @media (max-width: 1199px) {
+    padding-left: 12px;
+  }
+  @media (max-width: 575px) {
+    padding-left: 10px;
+  }
+  .cs_card_tag {
+    padding: 10px 32px;
+    border: 1px solid var(--white-color);
+    border-radius: 1.6em;
+    font-weight: 700;
+    color: var(--white-color);
+    margin-left: -16px;
+    @media (max-width: 1199px) {
+      padding: 10px 22px;
+      margin-left: -12px;
+    }
+    @media (max-width: 575px) {
+      padding: 7px 15px;
+      margin-left: -10px;
+    }
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+.cs_card.cs_style_1 {
+  position: relative;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40px 0;
+  border-radius: 20px;
+  min-height: 508px;
+  @media (max-width: 575px) {
+    padding: 20px;
+  }
+  .cs_arrow_btn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    @media (max-width: 575px) {
+      right: 20px;
+      top: 20px;
+    }
+  }
+}
+.cs_card_1_group {
+  display: flex;
+  gap: 24px;
+  @media (max-width: 1199px) {
+    gap: 15px;
+  }
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+  .cs_card.cs_style_1 {
+    padding: 32px 16px;
+    height: 740px;
+    flex: 1;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    @media (max-width: 991px) {
+      padding: 30px 20px;
+    }
+    .cs_card_title {
+      margin-bottom: 12px;
+      transition: all 0.4s ease;
+    }
+    .cs_card_subtitle {
+      transition: all 0.4s ease;
+      overflow: hidden;
+      height: 48px;
+    }
+    .cs_card_tags {
+      width: 320px;
+      position: absolute;
+      top: 32px;
+      left: 32px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      @media (max-width: 1199px) {
+        width: 280px;
+        top: 42px;
+      }
+      @media (max-width: 991px) {
+        opacity: 1;
+        visibility: visible;
+        left: 20px;
+        top: 30px;
+      }
+      @media (max-width: 350px) {
+        top: 70px;
+      }
+    }
+    &.active {
+      flex: 2.22;
+      padding: 32px;
+      @media (max-width: 1199px) {
+        flex: 1.8;
+        padding: 30px 20px;
+      }
+      .cs_card_title {
+        font-size: 80px;
+        line-height: 1.1em;
+        margin-bottom: 16px;
+        @media (max-width: 1400px) {
+          font-size: 70px;
+        }
+        @media (max-width: 1199px) {
+          font-size: 60px;
+        }
+        @media (max-width: 991px) {
+          font-size: 26px;
+        }
+      }
+      .cs_card_subtitle {
+        font-size: 20px;
+        line-height: 1.5em;
+        height: 90px;
+        @media (max-width: 1400px) {
+          font-size: 18px;
+          height: 86px;
+        }
+        @media (max-width: 1991px) {
+          font-size: 16px;
+          height: initial;
+        }
+      }
+      .cs_card_tags {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+.cs_card.cs_style_2 {
+  position: relative;
+  .cs_card_thumb {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    min-height: 320px;
+    img {
+      min-height: inherit;
+      object-fit: cover;
+      width: 100%;
+    }
+    &::before {
+      content: '';
+      border-radius: 20px;
+      background: linear-gradient(
+        0deg,
+        rgba(55, 72, 54, 0.75) 0%,
+        rgba(55, 72, 54, 0.75) 100%
+      );
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      transition: all 0.4s ease;
+      opacity: 0;
+    }
+    img {
+      width: 100%;
+      border-radius: inherit;
+      width: 100%;
+    }
+  }
+  .cs_arrow_btn {
+    position: absolute;
+    top: 16px;
+    right: 24px;
+  }
+  .cs_card_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 32px 24px;
+  }
+  .cs_card_title {
+    a {
+      background-repeat: no-repeat;
+      background-image: linear-gradient(
+        90deg,
+        currentColor 0,
+        currentColor 100%
+      );
+      transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+        color 0.27s ease-out;
+      background-position: 100% calc(100% - 0px);
+      background-size: 0 1px;
+      &:hover {
+        background-size: 100% 1px;
+        background-position: 0 calc(100% - 0px);
+      }
+    }
+  }
+  &:hover {
+    .cs_card_thumb {
+      &::before {
+        opacity: 1;
+      }
+    }
+    .cs_card_title {
+      a {
+        color: var(--white-color);
+      }
+    }
+  }
+}
+.cs_card_3_wrap {
+  height: 500px;
+  position: relative;
+  @media (max-width: 1199px) {
+    height: 450px;
+  }
+  @media (max-width: 991px) {
+    height: initial;
+    display: grid;
+    grid-gap: 30px 24px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 991px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    margin-top: -1px;
+    background-image: linear-gradient(
+      to right,
+      var(--white-color),
+      transparent
+    );
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_section_logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.3;
+    @media (max-width: 991px) {
+      bottom: -40px;
+    }
+    img {
+      height: 28px;
+    }
+  }
+}
+.cs_card.cs_style_3 {
+  position: absolute;
+  top: 0;
+  height: 250px;
+  width: 35%;
+  left: 0;
+  @media (max-width: 1199px) {
+    height: 225px;
+  }
+  @media (max-width: 991px) {
+    height: initial;
+    position: initial;
+    width: 100%;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    left: -10px;
+    bottom: -10px;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .cs_card_in {
+    width: 100%;
+    padding-left: 50px;
+    height: 100%;
+    clip-path: inset(0 round 0px 0px 0px 0px);
+    @media (max-width: 1199px) {
+      padding-left: 20px;
+    }
+    @media (max-width: 991px) {
+      padding-left: 0px;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -4px;
+      right: -4px;
+      bottom: -4px;
+      border: 3px dashed rgb(249 251 243 / 25%);
+      @media (max-width: 991px) {
+        display: none;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    top: initial;
+    bottom: 0;
+    &::before {
+      bottom: initial;
+      top: -10px;
+    }
+    .cs_card_in {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      @media (max-width: 991px) {
+        display: block;
+      }
+    }
+  }
+  &:nth-child(2) {
+    left: 22%;
+  }
+  &:nth-child(3) {
+    left: 44%;
+  }
+  &:nth-child(4) {
+    left: 66%;
+  }
+}
+.cs_card.cs_style_4 {
+  width: 1063px;
+  @media (max-width: 1400px) {
+    width: 900px;
+  }
+  @media (max-width: 1199px) {
+    width: 850px;
+  }
+  @media (max-width: 991px) {
+    width: 500px;
+  }
+  .cs_card_thumb {
+    height: 480px;
+    width: 100%;
+    @media (max-width: 1199px) {
+      height: 400px;
+    }
+    @media (max-width: 991px) {
+      margin-bottom: 20px;
+    }
+  }
+  .cs_card_info_list {
+    display: flex;
+    gap: 10px 54px;
+    flex: none;
+  }
+  .cs_card_info {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px 30px;
+    color: #7f8f80;
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+  .cs_card_text {
+    flex: none;
+    max-width: 410px;
+    width: 100%;
+    @media (max-width: 991px) {
+      max-width: 100%;
+    }
+  }
+}
+.cs_card.cs_style_5,
+.cs_card.cs_style_6 {
+  .cs_card_info_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 50px;
+    @media (max-width: 575px) {
+      gap: 10px 25px;
+    }
+  }
+  .cs_card_title a {
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, currentColor 0, currentColor 100%);
+    transition: background-size 0.42s cubic-bezier(0.49, 0.49, 0.08, 1),
+      color 0.27s ease-out;
+    background-position: 100% calc(100% - 0px);
+    background-size: 0 3px;
+    &:hover {
+      color: inherit;
+      background-size: 100% 3px;
+      background-position: 0 calc(100% - 0px);
+    }
+  }
+}
+.cs_card.cs_style_5 {
+  display: flex;
+  gap: 40px;
+  @media (max-width: 1199px) {
+    gap: 20px;
+  }
+  @media (max-width: 991px) {
+    flex-direction: column;
+  }
+
+  .cs_card_thumb {
+    flex: none;
+    width: 48%;
+    display: block;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @media (max-width: 991px) {
+      width: 100%;
+    }
+    img {
+      border-radius: 20px;
+      transition: all 1.2s;
+    }
+
+    a.cs_card_thumb {
+      &:hover {
+        img {
+          transform: scale(1.06);
+        }
+      }
+    }
+  }
+  .cs_card_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px 30px;
+  }
+}
+.cs_card.cs_style_6 {
+  padding: 120px 0;
+  position: relative;
+  @media (max-width: 991px) {
+    padding: 70px 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--heading-color);
+    opacity: 0.25;
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  .cs_card_in {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px 150px;
+    @media (max-width: 1400px) {
+      gap: 40px 40px;
+    }
+    @media (max-width: 1199px) {
+      flex-direction: column;
+      gap: 25px 0px;
+    }
+  }
+  .cs_card_left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 150px 0px;
+    @media (max-width: 1199px) {
+      gap: 25px 0px;
+    }
+  }
+  .cs_card_right {
+    flex: none;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    @media (max-width: 1400px) {
+      max-width: 450px;
+    }
+    @media (max-width: 1199px) {
+      max-width: 800px;
+    }
+  }
+}
